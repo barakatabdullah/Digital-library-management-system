@@ -1,0 +1,32 @@
+@import '@fontsource-variable/red-hat-display';
+@import '@unocss/reset/tailwind.css'
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: 'Red Hat Display Variable', sans-serif;
+}
+/* html,
+body,
+:root {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style: none;
+} */
+body {
+  width: 100vw;
+  position: relative;
+  overflow-x: hidden;
+  background-color:#f9f9fa ;
+}
+
+/* a {
+  text-decoration: none;
+}
+
+label {
+  cursor: pointer;
+} */
