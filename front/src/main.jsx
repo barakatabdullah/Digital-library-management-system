@@ -1,23 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {
-  RouterProvider,
-  createBrowserRouter
-} from "react-router-dom";
-import App from "./App";
-import 'virtual:uno.css'
-import './styles/index.css'
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-]);
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { PrimeReactProvider } from "primereact/api";
+import { RouterProvider } from "react-router-dom";
+import "virtual:uno.css";
+import "./styles/index.css";
+import router from "./router";
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+export function Fallback() {
+  return <p>Performing initial data load</p>;
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <PrimeReactProvider>
+      <RouterProvider router={router}  />
+    </PrimeReactProvider>
+  </React.StrictMode>
+);

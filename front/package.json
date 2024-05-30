@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@fontsource-variable/red-hat-display": "^5.0.21",
 		"@unocss/reset": "^0.60.3",
+		"primereact": "^10.6.6",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.23.1"
