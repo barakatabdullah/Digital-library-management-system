@@ -1,5 +1,7 @@
 import { Button } from 'primereact/button';
+import { set } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { setUserToken } from '../stores/auth';
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -15,7 +17,12 @@ export default function NavBar() {
             </div>
 
             <div>
-                <Button text icon="i-tabler-door-exit" className="text-white"/>
+                <Button onClick={()=>{
+                  localStorage.removeItem('token')
+                  setUserToken(null)
+                  navigate('auth/login')
+
+                }} text icon="i-tabler-door-exit" className="text-white"/>
             </div>
         </div>
     </nav>

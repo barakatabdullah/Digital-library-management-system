@@ -8,9 +8,11 @@ import { useForm, Controller } from "react-hook-form";
 
 
 import { onSubmit } from "./_utils";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const methods = useForm();
+  const navigate = useNavigate()
   
   return (
     <div className="w-screen h-screen flex items-center justify-center">
@@ -73,6 +75,14 @@ export default function Register() {
                 </div> */}
           <Button label="Register" type="submit" />
         </form>
+        <div className="flex justify-center w-full">
+            <Button
+            label="or Login with your account"
+            link
+            onClick={()=>navigate('/auth/login')}
+
+            />
+        </div>
       </Card>
     </div>
   );
