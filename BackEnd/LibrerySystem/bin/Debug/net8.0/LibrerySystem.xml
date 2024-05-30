@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibrerySystem</name>
+    </assembly>
+    <members>
+        <member name="M:LibrerySystem.Controllers.AccountController.Register(LibrerySystem.DTOs.RegisterDTO)">
+            <summary>
+            register new User
+            </summary>
+            <remarks>register the User with the provided model data</remarks>
+            <param name="registerDTO"></param>
+            <returns>new User pls Token and releted info</returns>
+            <response code="201">Registering the new User has been done successfully</response>
+            <response code="400">The data provided did not satisfy the model requirements</response>
+        </member>
+        <member name="M:LibrerySystem.Controllers.AccountController.Login(LibrerySystem.DTOs.LoginDTO)">
+            <summary>
+            Login the User
+            </summary>
+            <remarks>Login the User with the provided credentials</remarks>
+            <param name="loginDTO"></param>
+            <returns>the User info and related info + the JWT Token</returns>
+            <response code="200">The login succeed</response>
+            <response code="401">The login failed</response>
+            <response code="400">The data provided did not satisfy the model requirements or 
+            the Email or password incorract</response>
+        </member>
+        <member name="M:LibrerySystem.Controllers.AccountController.Get(System.Int32)">
+            <summary>
+            Get one user
+            </summary>
+            <remarks>Get the user based on the userId</remarks>
+            <param name="userId">the user Id</param>
+            <returns>The requsted user from the database</returns>
+            <response code="200">Fetching the user has been done successfully</response>
+            <response code="404">There is no user matching the id in the database</response>
+        </member>
+        <member name="M:LibrerySystem.Controllers.AccountController.UpdateUserInfo(System.Int32,LibrerySystem.DTOs.UpdateUserDTO)">
+            <summary>
+            update a user account info
+            </summary>
+            <remarks>update a user account info with the provided model data</remarks>
+            <param name="id">the id of the user to update</param>
+            <param name="updateUserDTO">the new data model</param>
+            <returns></returns>
+            <response code="204">Updateing the user account info has been done successfully</response>
+            <response code="400">The data provided did not satisfy the model requirements or Concurrency error</response>
+            <response code="404">There is no active user matching the id in the database</response>
+        </member>
+        <member name="P:LibrerySystem.DTOs.LoginDTO.Email">
+            <summary>
+            user Email
+            </summary>
+            <example>abdulraoof@outlook.com</example>
+        </member>
+        <member name="P:LibrerySystem.DTOs.LoginDTO.Password">
+            <summary>
+            user Password
+            </summary>
+            <example>111</example>
+        </member>
+        <member name="P:LibrerySystem.DTOs.RegisterDTO.Email">
+            <summary>
+            user Email
+            </summary>
+            <example>abdulraoof@outlook.com</example>
+        </member>
+        <member name="P:LibrerySystem.DTOs.RegisterDTO.Password">
+            <summary>
+            user Password
+            </summary>
+            <example>111</example>
+        </member>
+        <member name="P:LibrerySystem.DTOs.RegisterDTO.FullName">
+             <summary>
+             user Full Name
+             </summary>
+            <example>Abdulraoof Alkhawga</example> 
+        </member>
+        <member name="P:LibrerySystem.DTOs.UpdateUserDTO.FullName">
+             <summary>
+             user Full Name
+             </summary>
+            <example>Abdulraoof Alkhawga</example> 
+        </member>
+        <member name="P:LibrerySystem.DTOs.UpdateUserDTO.Email">
+            <summary>
+            user Email
+            </summary>
+            <example>abdulraoof@outlook.com</example>
+        </member>
+        <member name="T:LibrerySystem.Migrations.Init_Migration">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Init_Migration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Init_Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Init_Migration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LibrerySystem.Migrations.Add_User_FullName">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Add_User_FullName.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Add_User_FullName.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Add_User_FullName.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LibrerySystem.Migrations.Edit_Email_Type">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Edit_Email_Type.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Edit_Email_Type.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Migrations.Edit_Email_Type.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibrerySystem.Services.UserService.ValidateUser(LibrerySystem.DTOs.LoginDTO)">
+            <summary>
+            validate the user
+            </summary>
+            <param name="loginDTO">the login model to validate</param>
+            <returns>false if user name or password incorrect otherwise true</returns>
+        </member>
+        <member name="M:LibrerySystem.Services.UserService.CreateToken(System.String)">
+            <summary>
+            creates the JWT token based on the claims
+            </summary>
+            <returns>the JWT token</returns>
+        </member>
+        <member name="M:LibrerySystem.Services.UserService.GetSigningCredentials">
+            <summary>
+            Getting the Signing Credentials
+            </summary>
+            <returns>the customer Signing Credentials</returns>
+        </member>
+        <member name="M:LibrerySystem.Services.UserService.GetClaims(System.String)">
+            <summary>
+            Genrate the customer claims
+            </summary>
+            <returns>List of claims</returns>
+        </member>
+        <member name="M:LibrerySystem.Services.UserService.GenerateTokenOptions(Microsoft.IdentityModel.Tokens.SigningCredentials,System.Collections.Generic.List{System.Security.Claims.Claim})">
+            <summary>
+            Genrating the token options
+            </summary>
+            <param name="signingCredentials"></param>
+            <param name="claims"></param>
+            <returns>the options to configre the appliction</returns>
+        </member>
+        <member name="M:LibrerySystem.Services.UserService.GetUserByEmail(System.String)">
+            <summary>
+            return the customer based on Email
+            </summary>
+            <param name="email"></param>
+            <returns>customer + numbers and addresses</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+    </members>
+</doc>
