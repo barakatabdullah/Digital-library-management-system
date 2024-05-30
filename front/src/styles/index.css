@@ -1,5 +1,10 @@
+
+@import '@unocss/reset/tailwind.css' layer(tailwind-reset);
+/* IMPORTANT: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
+@import "primereact/resources/themes/lara-light-cyan/theme.css" layer(primereact);
+
 @import '@fontsource-variable/red-hat-display';
-@import '@unocss/reset/tailwind.css'
+
 
 html {
   scroll-behavior: smooth;
