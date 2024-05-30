@@ -16,7 +16,7 @@
 
 1. Clone the repository:
 ```shell
-git clone https://github.com/Academic-Abdo/TravelSystem.git
+git clone https://github.com/Academic-Abdo/TravelSystem.git](https://github.com/snacomds/Digital-library-management-system
 ```
 
 2. Navigate to the project directory:
