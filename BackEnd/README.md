@@ -6,7 +6,7 @@
 -   Project description:“a projact developed for Mosnad challanges”
 ## Technologies
 
-    - ASP.Net core v8
+    - ASP.Net core version 8
 
 
 ## Organization:
